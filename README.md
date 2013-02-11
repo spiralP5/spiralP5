@@ -1,5 +1,5 @@
-#spiralP5#
-##This is the home of the Processing Chicago's initiation of the port of Spiral5PTL by Daniel Sandin, Thomas Defanti and Mimi Shevitz for the [ReCode Project](http://recodeproject.com "ReCode Project")*##
+##spiralP5##
+###This is the home of the Processing Chicago's initiation of the port of Spiral5PTL by Daniel Sandin, Thomas Defanti and Mimi Shevitz for the [ReCode Project](http://recodeproject.com "ReCode Project")*###
 
 ###About the Project###
 Processing Chicago met on 02/04/2013 to initiate this effort. Daniel Sandin gave a talk on Spiral5PTL at the meeting--watching this video will give folks a good idea about the piece, the open hardware philosophy behind the gear that ran it, and some thoughts that Sandin has about how the port should (hopefully) look and feel.
