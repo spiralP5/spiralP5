@@ -72,12 +72,13 @@ class Spiral {
       vbuf.position(4 * n);
       vbuf.get(pos, 0, 3);  
       
-      // main spiral drawing algorithm
-      float th = n * (3600.0 / sA);
-      float R = sK * th;
+      // spiral position update...
+      float th = n * (3600.0 / pointVar);
+      float R = k * th;
       pos[0] = R * sin(th);    // x
       pos[1] = R * cos(th);    // y
-      pos[2] = R * sH;         // z
+      //pos[2] = R;              // z
+      pos[2] = R * thick;
       
       vbuf.position(4 * n);
       vbuf.put(pos, 0, 3);
@@ -86,6 +87,15 @@ class Spiral {
     // rewide buffer and update vertices
     vbuf.rewind();
     _spiral.endUpdateVertices();  
+    
+    pointVar = mouseX; //96 straight line spiral
+    //k = mouseY / 1000.0;
+    t = mouseY;
+    if( pointVar <= 0 )
+      pointVar = 1;
+      
+    if( t <= 0 )
+      t = 1;
 
   }
   
@@ -97,13 +107,12 @@ class Spiral {
     _canvas.pushMatrix();
     _canvas.rotateX(_ori.x);
     _canvas.rotateY(_ori.y);
-    //_canvas.rotateZ(_ori.z);  // well don't rotate it along Z-axis
+    //_canvas.rotateZ(_ori.z);
     
     _canvas.pushMatrix();
     
     // rotation for spiral effect along Z-axis
-    _canvas.rotate(millis() / sT );
-    
+    _canvas.rotate(millis() / t );
     _canvas.model(_spiral);
     _canvas.popMatrix();
     
